@@ -1,7 +1,7 @@
 
 ### react ts app
 
-!!! 引入stylus也无效
+!!! 引入stylus也无效...
 
 ### react-router
     react-router-dom 浏览器端使用
