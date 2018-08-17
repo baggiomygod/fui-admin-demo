@@ -76,6 +76,11 @@ const MenuConfig: object[] = [
                 title: '注册',
                 key: '/admin/form/reg',
                 icon: 'user-add'
+            },
+            {
+                title: '搜索',
+                key: '/admin/form/search',
+                icon: 'search'
             }
         ]
     },

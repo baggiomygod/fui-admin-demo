@@ -18,6 +18,7 @@ import TipsPage from 'src/pages/ui/tips'
 // Form
 import LoginPage from 'src/pages/form/login'
 import RegPage from 'src/pages/form/regist'
+import SearchForm from 'src/pages/form/search'
 
 // table
 import TablePage from 'src/pages/table/base-table'
@@ -65,6 +66,7 @@ export default class ERouter extends React.Component {
 
                             <Route exact={true}  path="/admin/form/login" component={LoginPage} />
                             <Route exact={true}  path="/admin/form/reg" component={RegPage} />
+                            <Route exact={true}  path="/admin/form/search" component={SearchForm} />
                             
                             <Route exact={true}  path="/admin/table/basic" component={TablePage} />
                             <Route exact={true}  path="/admin/table/high" component={AdvTablePage} />

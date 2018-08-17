@@ -7,3 +7,6 @@ body {
 #root{
   height: 100%
 }
+.ant-layout{
+  min-width: 960px;
+}
