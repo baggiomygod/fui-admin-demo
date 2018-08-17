@@ -1,27 +1,30 @@
 import * as React from 'react'
 import{Row, Col, Form, Input, Button, Card, Icon} from 'antd'
-// import { FormComponentProps } from 'antd/lib/form';
+import { FormComponentProps } from 'antd/lib/form'; // 使用FormComponentProps 必须调用Form.create()
 const FormItem = Form.Item
 // interface ISearchProps extends FormComponentProps{
-interface ISearchProps{
-    name?: string
-}
+// }
 
-class SearchGroup extends React.Component<ISearchProps, any>{
+class SearchCollapse extends React.Component<FormComponentProps, any>{
     public state = {
         expand: false
     }
-    constructor(props: ISearchProps) {
+    constructor(props: FormComponentProps) {
         super(props)
-        this.searchTable = this.searchTable.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
         this.handleReset = this.handleReset.bind(this)
         this.toggle = this.toggle.bind(this)
     }
-    public searchTable() {
-        console.log('search...')
+    public handleSubmit(e: any) {
+        e.preventDefault()
+        this.props.form.validateFieldsAndScroll((err: any, values: any) => {
+            if (!err) {
+                console.log('输入的内容', values)
+            }
+        })
     }
     public handleReset() {
-        console.log('reset')
+        this.props.form.resetFields();
     }
     public toggle() {
         const { expand } = this.state
@@ -30,6 +33,7 @@ class SearchGroup extends React.Component<ISearchProps, any>{
         })
     }
     public getFields() {
+        const { getFieldDecorator } = this.props.form
         const count =  this.state.expand ? 8 : 0
         // const { getFieldDecorator } = this.props.form
         if (count > 0) {
@@ -37,42 +41,90 @@ class SearchGroup extends React.Component<ISearchProps, any>{
                 <Row gutter={10}>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value4', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value5', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value6', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value7', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value8', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value9', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value10', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value11', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                         </Row>
@@ -81,25 +133,43 @@ class SearchGroup extends React.Component<ISearchProps, any>{
             }
     }
     public render () {
-        
+        const { getFieldDecorator } = this.props.form
         return (
             <div className="search-collapse-wrap">
                 <Card title="折叠搜索">
-                    <Form onSubmit={this.searchTable}>
+                    <Form onSubmit={this.handleSubmit}>
                         <Row gutter={10}>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value1', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value2', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value3', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
@@ -121,4 +191,19 @@ class SearchGroup extends React.Component<ISearchProps, any>{
     }
 }
 
-export default SearchGroup
+const SearchCollapsePage = Form.create()(SearchCollapse)
+export default SearchCollapsePage
+
+
+/*
+export default SearchCollapse 直接这样使用会报错
+
+(10,18): Type '{}' is not assignable to type 'IntrinsicAttributes & IntrinsicClassAttributes<SearchCollapse> & Readonly<{ children?: ReactNode;...'.
+  Type '{}' is not assignable to type 'Readonly<FormComponentProps>'.
+    Property 'form' is missing in type '{}'.
+
+// 解决： 未知：原因需要查看官网文档？
+const SearchCollapsePage = Form.create()(SearchCollapse)
+export default SearchCollapsePage
+
+*/

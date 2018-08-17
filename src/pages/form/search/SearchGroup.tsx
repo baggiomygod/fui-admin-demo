@@ -1,41 +1,63 @@
 import * as React from 'react'
 import{Row, Col, Form, Input, Button, Card} from 'antd'
+import { FormComponentProps } from 'antd/lib/form'; // 使用FormComponentProps 必须调用Form.create()
 const FormItem = Form.Item
-interface ISearchProps{
-    name?: string
-}
-class SearchGroup extends React.Component<ISearchProps, any>{
-    constructor(props: ISearchProps) {
+
+class SearchGroup extends React.Component<FormComponentProps, any>{
+    constructor(props: FormComponentProps) {
         super(props)
-        this.searchTable = this.searchTable.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
         this.handleReset = this.handleReset.bind(this)
     }
-    public searchTable() {
-        console.log('search...')
+    public handleSubmit(e: any) {
+        e.preventDefault()
+        this.props.form.validateFieldsAndScroll((err: any, values: any) => {
+            if (!err) {
+                console.log('输入的内容', values)
+            }
+        })
     }
     public handleReset() {
-        console.log('reset')
+        this.props.form.resetFields();
     }
     public render () {
-        
+        const { getFieldDecorator } = this.props.form
         return (
             <div className="search-group-wrap">
                 <Card title="单行搜索">
-                    <Form onSubmit={this.searchTable}>
+                    <Form onSubmit={this.handleSubmit}>
                         <Row gutter={10}>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value1', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value2', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Input placeholder="labelName" />
+                                    {
+                                        getFieldDecorator('value3', {
+                                            rules:[{required: true, message: '请输入'}]
+                                        })(
+                                            <Input placeholder="labelName" />
+                                        )
+                                    }
                                 </FormItem>
                             </Col>
                             <Col span={6}>
@@ -51,5 +73,5 @@ class SearchGroup extends React.Component<ISearchProps, any>{
         )
     }
 }
-
-export default SearchGroup
+const SearchGroupPage = Form.create()(SearchGroup)
+export default SearchGroupPage
