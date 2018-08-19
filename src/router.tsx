@@ -4,6 +4,7 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import App from 'src/App/App'
 import Layout from 'src/App/app-components/layout/layout'
 import Home from 'src/pages/home'
+// import NoMatch from 'src/pages/nonatch'
 // UI
 import ButtonPage from 'src/pages/ui/button'
 import DialogPage from 'src/pages/ui/dialog'
@@ -19,6 +20,7 @@ import TipsPage from 'src/pages/ui/tips'
 import LoginPage from 'src/pages/form/login'
 import RegPage from 'src/pages/form/regist'
 import SearchForm from 'src/pages/form/search'
+import dynamicForm from 'src/pages/form/dynamic'
 
 // table
 import TablePage from 'src/pages/table/base-table'
@@ -67,6 +69,7 @@ export default class ERouter extends React.Component {
                             <Route exact={true}  path="/admin/form/login" component={LoginPage} />
                             <Route exact={true}  path="/admin/form/reg" component={RegPage} />
                             <Route exact={true}  path="/admin/form/search" component={SearchForm} />
+                            <Route exact={true}  path="/admin/form/dynamic" component={dynamicForm} />
                             
                             <Route exact={true}  path="/admin/table/basic" component={TablePage} />
                             <Route exact={true}  path="/admin/table/high" component={AdvTablePage} />

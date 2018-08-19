@@ -174,12 +174,12 @@ class SearchCollapse extends React.Component<FormComponentProps, any>{
                             </Col>
                             <Col span={6}>
                                 <FormItem>
-                                    <Button type="primary" htmlType="submit">搜索</Button>
-                                    <Button type="default" style={{marginLeft: 8}} onClick={this.handleReset}>重置</Button>
-                                    <a onClick={this.toggle} style={{marginLeft: 10}}>
+                                    <a onClick={this.toggle} style={{marginRight: 10}}>
                                         <Icon type={this.state.expand ? 'up' : 'down'} />
                                         {this.state.expand ? '收起' : '展开'}
                                     </a>
+                                    <Button type="primary" htmlType="submit">搜索</Button>
+                                    <Button type="default" style={{marginLeft: 8}} onClick={this.handleReset}>重置</Button>
                                 </FormItem>
                             </Col>
                         </Row>

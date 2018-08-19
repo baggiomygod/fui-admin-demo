@@ -81,7 +81,13 @@ const MenuConfig: object[] = [
                 title: '搜索',
                 key: '/admin/form/search',
                 icon: 'search'
-            }
+            },
+            {
+                title: '动态表单',
+                key: '/admin/form/dynamic',
+                icon: 'plus'
+            },
+            
         ]
     },
     {
