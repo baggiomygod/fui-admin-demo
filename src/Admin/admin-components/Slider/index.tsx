@@ -13,7 +13,7 @@ interface IMyComponentState {
     menuTreeNode: any,
     navStyle: ITheme
 }
-export interface IProps {
+interface IProps {
     name: string;
   }
 /**
@@ -49,7 +49,7 @@ class Slider extends React.Component<IProps, IMyComponentState> {
        return (
            <div className="slider-wrap">
                <div className="logo">
-                <img src="/assets/logo/fui-2x.png" alt=""/>
+                <img src={'/assets/logo/' + this.props.name + '-2x.png'} alt=""/>
                 <h1>{this.props.name} MS</h1>
                </div>
                <Menu theme={this.state.navStyle.theme}>

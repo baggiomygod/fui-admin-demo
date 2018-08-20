@@ -128,4 +128,3 @@
         const DynamicPage = Form.create()(Dynamic)
         export default DynamicPage
     ```
-

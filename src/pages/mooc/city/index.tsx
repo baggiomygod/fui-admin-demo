@@ -13,7 +13,6 @@ class CityPage extends React.Component{
         this.getTableData = this.getTableData.bind(this)
     }
     public getTableData(list: any) {
-        console.log('child props:', list)
         this.setState({
             list
         })

@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { Form, Select, Input, Button, Row, Col } from 'antd'
 import { FormComponentProps } from 'antd/lib/form'
+import Axios from 'src/axios'
 const FormItem = Form.Item
 const Option = Select.Option
+const axios = new Axios()
 interface IFilterFormProps extends FormComponentProps {
     getTableData:any
 }
@@ -10,11 +12,17 @@ class FilterForm extends React.Component<IFilterFormProps, any>{
     public state = {
         list: []
     }
+    public params = {
+        page:1
+    }
     constructor(props: IFilterFormProps) {
         super(props)
         this.handleReset = this.handleReset.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.requestList = this.requestList.bind(this)
+    }
+    public componentDidMount(){
+        this.requestList();
     }
     public handleReset() {
         this.props.form.resetFields()
@@ -30,15 +38,21 @@ class FilterForm extends React.Component<IFilterFormProps, any>{
     }
     // 获取数据
     public requestList () {
-        const list:any[] = [
-            {
-            city: '1',
-            person_type: 'sss',
-            name: 'sss',
-            phone: '11232232322'
-        }]
-        this.props.getTableData(list)
+        axios.ajax({
+            url: 'city',
+            method: 'get',
+            data:{
+                params:{
+                    page:this.params.page
+                }
+            }
+        }).then((res:any) => {
+            this.props.getTableData(res.obj)
+        }).catch((err:any) => {
+            console.log(err)
+        })
     }
+
     public render() {
         const { getFieldDecorator } = this.props.form
         return (
