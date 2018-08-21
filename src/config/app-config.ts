@@ -1,6 +1,7 @@
 
 const appConfig: any = {
-    name: 'ipst'
+    name: 'ipst',
+    mock: true
 }
 
 export default appConfig

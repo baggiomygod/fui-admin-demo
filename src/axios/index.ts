@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { message } from 'antd'
+import config from 'src/config/app-config'
 const JsonP = require('jsonp') //  TSLint: require statement not part of an import statement (no-var-requires) 
 
 interface IOptions {
@@ -41,7 +42,8 @@ export default class Axios {
         //     loading = document.getElementById('ajaxLoading');
         //     loading.style.display = 'block'
         // }
-        const baseApi: string = 'http://localhost:8000' // admin_server项目的服务
+        const baseYapi: string = 'http://yapi.demo.qunar.com/mock/16864'
+        const baseApi: string =  config.mock ? baseYapi : 'http://localhost:8000' // admin_server项目的服务
         return new Promise((resolve, reject) => {
             axios({
                     url: options.url,
@@ -56,7 +58,7 @@ export default class Axios {
                     // }
                     if (response.status === 200) {
                         const res = response.data
-                        if (res.code === '0') {
+                        if (res.code === 0) {
                             resolve(res)
                             message.success(res.msg)
                         } else {

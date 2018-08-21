@@ -1,0 +1,12 @@
+{
+    "code": "0",
+    "msg": "success",
+    "obj": {
+        "name": "aa",
+        "phone": "123454456",
+        "address": "hangzhou binjiang XX 3210",
+        "sex": "男",
+        "age": 18,
+        "job": "developer"
+    }
+}

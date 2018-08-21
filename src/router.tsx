@@ -28,7 +28,8 @@ import AdvTablePage from 'src/pages/table/adv-table'
 
 // mooc
 import BikeMapPage from 'src/pages/mooc/bikeMap'
-import CityPage from 'src/pages/mooc/city'
+// import CityPage from 'src/pages/mooc/city'
+import PersonPage from 'src/pages/mooc/person'
 import RichPage from 'src/pages/mooc/rich'
 import TeamPage from 'src/pages/mooc/team'
 
@@ -75,7 +76,7 @@ export default class ERouter extends React.Component {
                             <Route exact={true}  path="/admin/table/high" component={AdvTablePage} />
 
                             <Route exact={true}  path="/admin/mooc/rich" component={RichPage} />
-                            <Route exact={true}  path="/admin/mooc/city" component={CityPage} />
+                            <Route exact={true}  path="/admin/mooc/person" component={PersonPage} />
                             <Route exact={true}  path="/admin/mooc/user" component={TeamPage} />
                             <Route exact={true}  path="/admin/mooc/bikeMap" component={BikeMapPage} />
 

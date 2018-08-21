@@ -7,22 +7,25 @@ const Option = Select.Option
 const axios = new Axios()
 interface IFilterFormProps extends FormComponentProps {
     getTableData:any
+    onRef:any
 }
 class FilterForm extends React.Component<IFilterFormProps, any>{
     public state = {
         list: []
     }
-    public params = {
-        page:1
-    }
+    // public params = {
+    //     page:1
+    // }
     constructor(props: IFilterFormProps) {
         super(props)
         this.handleReset = this.handleReset.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.requestList = this.requestList.bind(this)
     }
+    
     public componentDidMount(){
         this.requestList();
+        this.props.onRef(this) // 调用父组件onRef方法,传入this
     }
     public handleReset() {
         this.props.form.resetFields()
@@ -31,23 +34,33 @@ class FilterForm extends React.Component<IFilterFormProps, any>{
         e.preventDefault()
         this.props.form.validateFields((err: any, values: any) => {
             if (!err) {
-                console.log('search values:', values)
                 this.requestList()
             }
         }) 
     }
     // 获取数据
-    public requestList () {
+    public requestList (pager:any = {}) {
+        const params = {
+            currentPage: pager.current || 1,
+            city_id: '',
+            person_type: '',
+            name: ''
+        }
+        this.props.form.validateFields((err: any, values: any) => {
+            if (!err) {
+                params.city_id = values.city_id
+                params.person_type = values.person_type
+                params.name = values.name
+            }
+        })
         axios.ajax({
-            url: 'city',
-            method: 'get',
+            url: 'person',
+            method: 'post',
             data:{
-                params:{
-                    page:this.params.page
-                }
+                params
             }
         }).then((res:any) => {
-            this.props.getTableData(res.obj)
+            this.props.getTableData(res)
         }).catch((err:any) => {
             console.log(err)
         })

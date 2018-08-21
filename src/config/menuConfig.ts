@@ -116,9 +116,9 @@ const MenuConfig: object[] = [
                 icon: 'file-markdown'
             },
             {
-                title: '城市管理',
-                key: '/admin/mooc/city',
-                icon: 'compass'
+                title: '人员管理',
+                key: '/admin/mooc/person',
+                icon: 'user'
             },
             // {
             //     title: '订单管理',
@@ -135,7 +135,7 @@ const MenuConfig: object[] = [
             //     ]
             // },
             {
-                title: '员工管理',
+                title: '团队管理',
                 key: '/admin/mooc/user',
                 icon: 'team'
             },
