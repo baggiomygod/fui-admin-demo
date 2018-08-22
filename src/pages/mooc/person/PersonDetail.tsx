@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Modal } from 'antd';
 import Axios from 'src/axios'
 const axios = new Axios()
-
+import './personDetail.less'
 interface IDetail {
     name?:string
     age?:number
@@ -75,18 +75,37 @@ class PersonDetail extends React.Component<IPersonDetail> {
     public render () {
         return (
             <Modal title="详情"
+                className="person-detail-modal"
                 visible={this.state.visible}
                 onOk={this.handleOK}
                 onCancel={this.handleCancel}
                 okText="确认"
                 cancelText="取消"
                 cancelButtonProps={{disabled: true}}>
-                <p>姓名:{this.state.detail.name}</p>
-                <p>年龄:{this.state.detail.age}</p>
-                <p>地址:{this.state.detail.address}</p>
-                <p>性别:{this.state.detail.sex}</p>
-                <p>手机:{this.state.detail.phone}</p>
-                <p>工作:{this.state.detail.job}</p>
+                <div>
+                    <label>姓名:</label>
+                    <span>{this.state.detail.name}</span>
+                </div>
+                <div>
+                    <label>年龄:</label>
+                    <span>{this.state.detail.age}</span>
+                </div>
+                <div>
+                    <label>地址:</label>
+                    <span>{this.state.detail.address}</span>
+                </div>
+                <div>
+                    <label>性别:</label>
+                    <span>{this.state.detail.sex}</span>
+                </div>
+                <div>
+                    <label>手机:</label>
+                    <span>{this.state.detail.phone}</span>
+                </div>
+                <div>
+                    <label>工作:</label>
+                    <span>{this.state.detail.job}</span>
+                </div>
             </Modal>
         )
     }

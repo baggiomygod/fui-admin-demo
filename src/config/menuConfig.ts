@@ -141,7 +141,7 @@ const MenuConfig: object[] = [
             },
             {
                 title: '车辆地图',
-                key: '/admin/mooc/bikeMap',
+                key: '/admin/mooc/carMap',
                 icon: 'car'
             },
         ]

@@ -1,7 +1,10 @@
 import * as React from 'react'
 import { Card, Table, Popconfirm } from 'antd'
+import Axios from 'src/axios'
 import FilterForm from './FilterForm'
 import PersonDetail from './PersonDetail'
+const axios = new Axios()
+
 // import axios from 'src/axios'
 // import utils from 'src/utils/utils'
 import './index.less'
@@ -34,13 +37,23 @@ class PersonPage extends React.Component{
         })
 
     }
-   
+   // 翻页
     public handleTableChange(pagination:any, filters:any, sorter:any) {
             const pager:any = pagination;
             this.filterForm.requestList(pager)
     }
     public handleDel(id:string) {
-        console.log('del:', id)
+        axios.ajax({
+            url: 'person/' + id,
+            method: 'delete' // axios delete 时显示requestmethos: options?
+        }).then((res:any) => {
+            console.log(this.state.pagination)
+            if (res.code === 0) {
+                this.filterForm.requestList()
+            }
+        }).catch(err => {
+            console.log(err)
+        })
     }
     public viewDetail(id:string) {
         this.setState({
@@ -94,7 +107,7 @@ class PersonPage extends React.Component{
                 <Card>
                     <FilterForm getTableData={bindPropFun} onRef={this.onFilterFormRef}/>
                 </Card>
-                <Card className="content-wrap" style={{marginTop: 10}}>
+                <Card className="content-wrap mt-10">
                     <Table
                         bordered={true}
                         columns={columns}

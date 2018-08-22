@@ -27,7 +27,7 @@ import TablePage from 'src/pages/table/base-table'
 import AdvTablePage from 'src/pages/table/adv-table'
 
 // mooc
-import BikeMapPage from 'src/pages/mooc/bikeMap'
+import CarMapPage from 'src/pages/mooc/carMap'
 // import CityPage from 'src/pages/mooc/city'
 import PersonPage from 'src/pages/mooc/person'
 import RichPage from 'src/pages/mooc/rich'
@@ -78,7 +78,7 @@ export default class ERouter extends React.Component {
                             <Route exact={true}  path="/admin/mooc/rich" component={RichPage} />
                             <Route exact={true}  path="/admin/mooc/person" component={PersonPage} />
                             <Route exact={true}  path="/admin/mooc/user" component={TeamPage} />
-                            <Route exact={true}  path="/admin/mooc/bikeMap" component={BikeMapPage} />
+                            <Route exact={true}  path="/admin/mooc/carMap" component={CarMapPage} />
 
                             <Route exact={true}  path="/admin/charts/bar" component={BarPage} />
                             <Route exact={true}  path="/admin/charts/pie" component={PiePage} />

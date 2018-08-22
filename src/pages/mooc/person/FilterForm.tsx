@@ -38,6 +38,7 @@ class FilterForm extends React.Component<IFilterFormProps, any>{
             }
         }) 
     }
+    
     // 获取数据
     public requestList (pager:any = {}) {
         const params = {
