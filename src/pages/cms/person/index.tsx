@@ -26,6 +26,7 @@ class PersonPage extends React.Component{
         this.handleTableChange = this.handleTableChange.bind(this)
         this.onFilterFormRef = this.onFilterFormRef.bind(this)
         this.onDetailRef= this.onDetailRef.bind(this)
+        this.openPositionPage= this.openPositionPage.bind(this)
     }
     public getTableData(res: any) {
         const pagination:any = {...this.state.pagination}
@@ -64,6 +65,9 @@ class PersonPage extends React.Component{
             loading: false
         })
     }
+    public openPositionPage(id: string | number) {
+        window.open(`/#/common/person/position/${id}`,'_blank')
+    }
     // 子组件调用这个方法传入子组件的this
     public onFilterFormRef(ref:any) {
         this.filterForm = ref // 执行后this.filterForm === 子组件的this
@@ -78,6 +82,7 @@ class PersonPage extends React.Component{
             {title: '人员类型', dataIndex: 'person_type'},
             {title: '姓名', dataIndex: 'name'},
             {title: '手机号', dataIndex: 'phone'},
+            // {title: '位置', dataIndex: 'position'},
             {title: '操作',
             render: (text:string, item:any) => {
                 const bindHandleDel = () => {
@@ -86,12 +91,16 @@ class PersonPage extends React.Component{
                 const bindViewDetail = () => {
                     this.viewDetail(item.id)
                 }
+                const bindOpenPosition = () => {
+                    this.openPositionPage(item.id)
+                }
                 return (
                     <div className="operate-btns">
                         <a onClick={bindViewDetail}>详情</a>
                         <Popconfirm title="确认删除?" cancelText="取消" okText="确定" onConfirm={bindHandleDel}>
                             <a href="#">删除</a>
                         </Popconfirm>
+                        <a onClick={bindOpenPosition}>查看位置</a>
                     </div>
                     )
             }}

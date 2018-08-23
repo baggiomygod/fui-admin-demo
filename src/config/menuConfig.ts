@@ -107,17 +107,17 @@ const MenuConfig: object[] = [
         ]
     },
     {
-        title: 'mooc',
+        title: 'cms',
         key: '/admin/mooc',
         children: [
             {
                 title: '富文本',
-                key: '/admin/mooc/rich',
+                key: '/admin/cms/rich',
                 icon: 'file-markdown'
             },
             {
                 title: '人员管理',
-                key: '/admin/mooc/person',
+                key: '/admin/cms/person',
                 icon: 'user'
             },
             // {
@@ -136,12 +136,12 @@ const MenuConfig: object[] = [
             // },
             {
                 title: '团队管理',
-                key: '/admin/mooc/user',
+                key: '/admin/cms/user',
                 icon: 'team'
             },
             {
                 title: '车辆地图',
-                key: '/admin/mooc/carMap',
+                key: '/admin/cms/carMap',
                 icon: 'car'
             },
         ]
@@ -166,43 +166,6 @@ const MenuConfig: object[] = [
                 key: '/admin/charts/line',
                 icon: 'line-chart'
             },
-        ]
-    },
-    {
-        title: 'map',
-        key: '/admin/map',
-        icon: '',
-        children: [
-            {
-                title: '打点',
-                key: '/admin/map/marker',
-                icon: 'environment-o'
-            },
-            {
-                title: '轨迹',
-                key: '/admin/map/driving',
-                icon: 'environment-o'
-            },
-            {
-                title: '路书',
-                key: '/admin/map/lushu',
-                icon: 'environment-o'
-            },
-            {
-                title: '热力图',
-                key: '/admin/map/hot',
-                icon: 'environment-o'
-            },
-            {
-                title: '线',
-                key: '/admin/map/lines',
-                icon: 'environment-o'
-            },
-            {
-                title: '绘制',
-                key: '/admin/map/draw',
-                icon: 'environment-o'
-            }
         ]
     },
     {

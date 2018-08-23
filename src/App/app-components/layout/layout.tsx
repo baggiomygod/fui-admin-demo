@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { Layout, Icon } from 'antd';
+import { Layout } from 'antd';
 import SiderMenus from 'src/App/app-components/menus/menu'
-
+// import Avatar from 'src/App/app-components/Avatar'
+import ComHeader from 'src/App/app-components/Header'
 const { Header, Sider, Content } = Layout;
 import './layout.less'
 // import SiderMenus from '../menus/menu';
@@ -18,6 +19,12 @@ class LayoutDemo extends React.Component {
   }
 
   public render() {
+    // 子元素调用sliderTrigger传入collapsed
+    const bindSliderTrigger = (collapsed:boolean) => {
+        this.setState({
+            collapsed
+        })
+    }
     return (
       <Layout className="app-layout-wrap">
         <Sider
@@ -29,11 +36,10 @@ class LayoutDemo extends React.Component {
         </Sider>
         <Layout>
           <Header style={{ background: '#fff', padding: 0 }}>
-            <Icon
-              className="trigger"
-              type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-              onClick={this.toggle}
-            />
+            <ComHeader backgroundColor="#fff" 
+                        showLogoIcon="icon" 
+                        sliderTrigger={bindSliderTrigger}
+                        avatarColor="#001529" />
           </Header>
           <Content style={{ margin: '24px 16px', padding: 24, background: '#fff' }}>
               {this.props.children}

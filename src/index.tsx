@@ -2,7 +2,6 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // import Admin from './mooc-admin';
 import Router from './router'
-// import App from './App';
 
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';

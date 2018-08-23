@@ -2,10 +2,10 @@
     "code": "0",
     "msg": "success",
     "obj": [
-    { "city": "1", "person_type": "sss", "name": "111", "phone": "11232232322"},
-    { "city": "2", "person_type": "ssd", "name": "222", "phone": "11232342122"},
-    { "city": "3", "person_type": "dde", "name": "333", "phone": "14133222322"},
-    { "city": "4", "person_type": "qwe", "name": "444", "phone": "11232232322"},
-    { "city": "5", "person_type": "asd", "name": "555", "phone": "11232232322"}
+    { "city": "1", "person_type": "sss", "name": "111", "phone": "11232232322", "position": []},
+    { "city": "2", "person_type": "ssd", "name": "222", "phone": "11232342122", "position": []},
+    { "city": "3", "person_type": "dde", "name": "333", "phone": "14133222322", "position": []},
+    { "city": "4", "person_type": "qwe", "name": "444", "phone": "11232232322", "position": []},
+    { "city": "5", "person_type": "asd", "name": "555", "phone": "11232232322", "position": []}
 ]
 }
