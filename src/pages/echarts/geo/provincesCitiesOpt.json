@@ -1,0 +1,62 @@
+[{
+    "value": "zhejiang",
+    "label": "浙江",
+    "children": [
+        {
+            "value": "hangzhou",
+            "label": "杭州",
+            "children": []
+        },
+        {
+            "value": "ningbo",
+            "label": "宁波",
+            "children": []
+        },
+        {
+            "value": "wenzhou",
+            "label": "温州",
+            "children": []
+        },
+        {
+            "value": "jiaxing",
+            "label": "嘉兴",
+            "children": []
+        },
+        {
+            "value": "huzhou",
+            "label": "湖州",
+            "children": []
+        },
+        {
+            "value": "shaoxing",
+            "label": "绍兴",
+            "children": []
+        },
+        {
+            "value": "330700",
+            "label": "金华",
+            "children": []
+        },
+        {
+            "value": "quzhou",
+            "label": "衢州",
+            "children": []
+        },
+        {
+            "value": "zhoushan",
+            "label": "舟山",
+            "children": []
+        },
+        {
+            "value": "taizhou",
+            "label": "台州",
+            "children": []
+        },
+        {
+            "value": "lishui",
+            "label": "丽水",
+            "children": []
+        }
+    ]
+  }
+]

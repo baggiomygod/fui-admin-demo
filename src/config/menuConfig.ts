@@ -166,6 +166,11 @@ const MenuConfig: object[] = [
                 key: '/admin/charts/line',
                 icon: 'line-chart'
             },
+            {
+                title: 'geo地图',
+                key: '/admin/charts/geo',
+                icon: 'environment-o'
+            },
         ]
     },
     {

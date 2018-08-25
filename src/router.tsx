@@ -38,6 +38,7 @@ import TeamPage from 'src/pages/cms/team'
 import BarPage from 'src/pages/echarts/bar'
 import LinePage from 'src/pages/echarts/line'
 import PiePage from 'src/pages/echarts/pie'
+import GeoPage from 'src/pages/echarts/geo'
 
 // setting
 import PermissionPage from 'src/pages/setting/permission'
@@ -74,6 +75,7 @@ export default class ERouter extends React.Component {
                         <Route exact={true} path="/admin/charts/bar" component={BarPage} />
                         <Route exact={true} path="/admin/charts/pie" component={PiePage} />
                         <Route exact={true} path="/admin/charts/line" component={LinePage} />
+                        <Route exact={true} path="/admin/charts/geo" component={GeoPage} />
 
                         <Route exact={true} path="/admin/permission" component={PermissionPage} />
 
