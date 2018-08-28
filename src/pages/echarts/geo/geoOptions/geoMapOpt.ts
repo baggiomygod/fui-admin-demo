@@ -1,3 +1,6 @@
+/**
+ * 创建geo2D地图
+ */
 const options = {
     title: { text: '' },
     tooltip: {

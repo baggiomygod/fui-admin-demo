@@ -1,4 +1,9 @@
 
+/**
+ * 创建geo3D地图 options
+ * @param mapName 
+ * @param seriesData 
+ */
 function geoOptions(mapName: string, 
     seriesData: any = {
         bar3dData:[],

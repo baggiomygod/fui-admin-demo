@@ -9,8 +9,8 @@ import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import 'echarts/lib/component/geo';
 
-// import geoOptions from './geoMapOpt' // 2d
-import geoOptions from './map3d' // 3d
+// import geoOptions from './geoOptions/geoMapOpt' // 2d
+import geoOptions from './geoOptions/map3d' // 3d
 const zhejiang = require('./geoMapData/geometryProvince/33.json') // 浙江
 const hangzhou = require('./geoMapData/geometryCouties/330100.json') // 杭州
 const ningbo = require('./geoMapData/geometryCouties/330200.json') // 宁波
@@ -23,8 +23,8 @@ const quzhou = require('./geoMapData/geometryCouties/330800.json') // 衢州
 const zhoushan = require('./geoMapData/geometryCouties/330900.json') // 舟山
 const taizhou = require('./geoMapData/geometryCouties/331000.json') // 台州
 const lishui = require('./geoMapData/geometryCouties/331100.json') // 丽水
-const cascaderOptions = require('./provincesCitiesOpt.json')
 
+const cascaderOptions = require('./mock/provincesCitiesOpt.json')
 import requestSeriesData from './mock/requestSeriesData'
 
 class Geo extends React.Component{
@@ -58,17 +58,18 @@ class Geo extends React.Component{
         this.mapChart.setOption(geoOptions('zhejiang', requestSeriesData()));
     }
     public changeMap (val:any) {
-        echarts.registerMap(val[1], this.state.geoJson[val[1]])
+        const selection: string = val[1] ? val[1] : val[0]
+        echarts.registerMap(selection, this.state.geoJson[selection])
         this.mapChart.clear();
 
-        this.mapChart.setOption(geoOptions(val[1]));
+        this.mapChart.setOption(geoOptions(selection));
     }
     public render() {
         
         return (
             <div className="gro-wrap">
                 <div className="filter-map" style={{marginBottom: 10}}>
-                    <Cascader options={cascaderOptions} onChange={this.changeMap} placeholder="Please select" />
+                    <Cascader options={cascaderOptions} onChange={this.changeMap} changeOnSelect={true} placeholder="请选择地区" />
                 </div>
                 <div id="geo-container" style={{ width: '100%', height: 620, backgroundColor: 'rgba(23,13,63,1)' }} />
             </div>
