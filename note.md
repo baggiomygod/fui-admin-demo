@@ -1,9 +1,9 @@
 ### yarn
     特点：
-    1. 快
-    2. 安全
-    3. 更简洁的输出
-    4. 更好的语义化
+    1. 快;
+    2. 安全;
+    3. 更简洁的输出;
+    4. 更好的语义化;
 
     ```
         yarn add react-router // npm i react-router
