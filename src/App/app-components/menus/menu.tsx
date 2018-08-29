@@ -41,7 +41,7 @@ class SiderMenus extends React.Component<{}, IMyComponentState> {
                 )
             } else {
                 return (
-                    <Menu.Item key={item.key}>
+                    <Menu.Item key={item.key} disabled={item.disabled}>
                         <Link to={item.key}>
                             <Icon type={item.icon} />
                             <span>{item.title}</span>

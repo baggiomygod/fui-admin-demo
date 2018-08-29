@@ -142,7 +142,8 @@ const MenuConfig: object[] = [
             {
                 title: '车辆地图',
                 key: '/admin/cms/carMap',
-                icon: 'car'
+                icon: 'car',
+                disabled: 'disabled'
             },
         ]
     },

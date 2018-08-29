@@ -48,7 +48,6 @@ class PersonPage extends React.Component{
             url: 'person/' + id,
             method: 'delete' // axios delete 时显示requestmethos: options?
         }).then((res:any) => {
-            console.log(this.state.pagination)
             if (res.code === 0) {
                 this.filterForm.requestList()
             }

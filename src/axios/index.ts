@@ -66,6 +66,7 @@ export default class Axios {
                             reject(res.msg)
                         }
                     } else {
+                        message.error('gitpage展示不支持数据请求')
                         reject(response.status)
                     }
                 })
