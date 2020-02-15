@@ -1,13 +1,17 @@
 import * as React from 'react'
-import { Card, Table, Popconfirm } from 'antd'
+import { Card, Table, Popconfirm} from 'antd'
 import Axios from 'src/axios'
 import FilterForm from './FilterForm'
 import PersonDetail from './PersonDetail'
 const axios = new Axios()
+// mobx
+import { Provider } from 'mobx-react';
+import PersonStore from 'src/stores/cms/person'
 
 // import axios from 'src/axios'
 // import utils from 'src/utils/utils'
-import './index.less'
+import './index.scss'
+// import './index.less'
 
 class PersonPage extends React.Component{
     public state = {
@@ -110,7 +114,9 @@ class PersonPage extends React.Component{
             })
             this.getTableData(list)
         }
+
         return (
+           
             <div className="person-page-wrap">
                 <Card>
                     <FilterForm getTableData={bindPropFun} onRef={this.onFilterFormRef}/>
@@ -126,7 +132,9 @@ class PersonPage extends React.Component{
                         onChange={this.handleTableChange}
                     />
                 </Card>
-                <PersonDetail onRef={this.onDetailRef} />
+                <Provider PersonStore={PersonStore}>
+                    <PersonDetail onRef={this.onDetailRef} />
+                </Provider>
             </div>
         )
     }

@@ -5,6 +5,7 @@ import App from 'src/App/App'
 import Layout from 'src/App/app-components/layout/layout'
 import DetailLayout from 'src/App/app-components/DetailLayout'
 import Home from 'src/pages/home'
+import Login from 'src/pages/login'
 // import NoMatch from 'src/pages/nonatch'
 // UI
 import ButtonPage from 'src/pages/ui/button'
@@ -93,6 +94,7 @@ export default class ERouter extends React.Component {
             <Router>
                 <App>
                     <Switch>
+                        <Route path="/login" component={Login} />
                         <Route path="/common" render={CommonPageRender} />
                         <Route path="/" render={adminRouderRender} />
                     </Switch>
