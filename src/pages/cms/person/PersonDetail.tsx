@@ -1,7 +1,5 @@
 import * as React from 'react'
 import { Modal} from 'antd';
-import Axios from 'src/axios'
-const axios = new Axios()
 import { inject, observer } from 'mobx-react';
 
 import './personDetail.less'
@@ -58,36 +56,12 @@ class PersonDetail extends React.Component<IPersonDetail> {
         this.setState({
             loading: this.props.PersonStore.loading
         })
-        axios.ajax({
-            url: 'person/' + id,
-            method: 'get'
-        }).then((res:any) => {
-            if (res.code === 0) {
-                this.showPersonModal()
+
+        const res = {"obj":{"name":"aa","phone":"123454456","address":"hangzhou binjiang XX 3210","sex":"男","age":18,"job":"developer"},"msg":"成功","code":0}
+        this.showPersonModal()
                 this.setState({
                     detail: res.obj
                 })
-            } else {
-                console.log(res.code)
-            }
-            console.log(this.props.PersonStore)
-            setTimeout(() => {
-                this.props.PersonStore.showLoading(false)
-                this.setState({
-                    loading: this.props.PersonStore.loading
-                })
-            }, 1000)
-            
-        }).catch(err => {
-            console.log(err)
-            setTimeout(() => {
-                this.props.PersonStore.showLoading(false)
-                this.setState({
-                    loading: this.props.PersonStore.loading
-                })
-                console.log(this.props.PersonStore.loading)
-            }, 1000)
-        })
     }
     public handleOK(): void {
         this.setState({

@@ -1,10 +1,8 @@
 import * as React from 'react'
 import { Form, Select, Input, Button, Row, Col } from 'antd'
 import { FormComponentProps } from 'antd/lib/form'
-import Axios from 'src/axios'
 const FormItem = Form.Item
 const Option = Select.Option
-const axios = new Axios()
 interface IFilterFormProps extends FormComponentProps {
     getTableData:any
     onRef:any
@@ -41,30 +39,21 @@ class FilterForm extends React.Component<IFilterFormProps, any>{
     
     // 获取数据
     public requestList (pager:any = {}) {
-        const params = {
-            currentPage: pager.current || 1,
-            city_id: '',
-            person_type: '',
-            name: ''
-        }
-        this.props.form.validateFields((err: any, values: any) => {
-            if (!err) {
-                params.city_id = values.city_id
-                params.person_type = values.person_type
-                params.name = values.name
-            }
-        })
-        axios.ajax({
-            url: 'person',
-            method: 'post',
-            data:{
-                params
-            }
-        }).then((res:any) => {
-            this.props.getTableData(res)
-        }).catch((err:any) => {
-            console.log(err)
-        })
+        // const params = {
+        //     currentPage: pager.current || 1,
+        //     city_id: '',
+        //     person_type: '',
+        //     name: ''
+        // }
+        // this.props.form.validateFields((err: any, values: any) => {
+        //     if (!err) {
+        //         params.city_id = values.city_id
+        //         params.person_type = values.person_type
+        //         params.name = values.name
+        //     }
+        // })
+        const res = {"obj":[{"id":1,"city":"1","person_type":"sss","name":"111","phone":"11232232322","position":[]},{"id":2,"city":"2","person_type":"ssd","name":"222","phone":"11232342122","position":[]},{"id":3,"city":"3","person_type":"dde","name":"333","phone":"14133222322","position":[]},{"id":4,"city":"4","person_type":"qwe","name":"444","phone":"11232232322","position":[]},{"id":5,"city":"5","person_type":"asd","name":"555","phone":"11232232322","position":[]}],"msg":"成功","code":0}
+        this.props.getTableData(res)
     }
 
     public render() {

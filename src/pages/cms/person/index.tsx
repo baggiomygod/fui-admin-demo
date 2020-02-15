@@ -1,9 +1,7 @@
 import * as React from 'react'
-import { Card, Table, Popconfirm} from 'antd'
-import Axios from 'src/axios'
+import { Card, Table, Popconfirm, message} from 'antd'
 import FilterForm from './FilterForm'
 import PersonDetail from './PersonDetail'
-const axios = new Axios()
 // mobx
 import { Provider } from 'mobx-react';
 import PersonStore from 'src/stores/cms/person'
@@ -48,16 +46,11 @@ class PersonPage extends React.Component{
             this.filterForm.requestList(pager)
     }
     public handleDel(id:string) {
-        axios.ajax({
-            url: 'person/' + id,
-            method: 'delete' // axios delete 时显示requestmethos: options?
-        }).then((res:any) => {
-            if (res.code === 0) {
-                this.filterForm.requestList()
-            }
-        }).catch(err => {
-            console.log(err)
-        })
+        const res = {code: 0}
+        if (res.code === 0) {
+            message.success('删除成功')
+            this.filterForm.requestList()
+        }
     }
     public viewDetail(id:string) {
         this.setState({

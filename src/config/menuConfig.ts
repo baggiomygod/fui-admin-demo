@@ -6,7 +6,61 @@ const MenuConfig: object[] = [
         icon: 'home'
     },
     {
-        title: 'UI',
+        title: '数据可视化',
+        key: '/admin/charts',
+        icon: 'bars',
+        children: [
+            {
+                title: '柱形图',
+                key: '/admin/charts/bar',
+                icon: 'bar-chart'
+            },
+            {
+                title: '饼图',
+                key: '/admin/charts/pie',
+                icon: 'pie-chart'
+            },
+            {
+                title: '折线图',
+                key: '/admin/charts/line',
+                icon: 'line-chart'
+            },
+            {
+                title: 'geo地图',
+                key: '/admin/charts/geo',
+                icon: 'environment-o'
+            },
+        ]
+    },
+    {
+        title: 'cms',
+        key: '/admin/mooc',
+        children: [
+            {
+                title: '富文本',
+                key: '/admin/cms/rich',
+                icon: 'file-markdown'
+            },
+            {
+                title: '人员管理',
+                key: '/admin/cms/person',
+                icon: 'user'
+            },
+            {
+                title: '团队管理',
+                key: '/admin/cms/user',
+                icon: 'team'
+            },
+            {
+                title: '车辆地图',
+                key: '/admin/cms/carMap',
+                icon: 'car',
+                disabled: 'disabled'
+            },
+        ]
+    },
+    {
+        title: 'antd UI',
         key: '/admin/ui',
         icon: 'ant-design',
         children: [
@@ -63,7 +117,7 @@ const MenuConfig: object[] = [
         ]
     },
     {
-        title: 'form',
+        title: '表单',
         key: '/admin/form',
         icon: 'form',
         children: [
@@ -91,7 +145,7 @@ const MenuConfig: object[] = [
         ]
     },
     {
-        title: 'table',
+        title: '表格',
         key: '/admin/table',
         children: [
             {
@@ -106,74 +160,8 @@ const MenuConfig: object[] = [
             }
         ]
     },
-    {
-        title: 'cms',
-        key: '/admin/mooc',
-        children: [
-            {
-                title: '富文本',
-                key: '/admin/cms/rich',
-                icon: 'file-markdown'
-            },
-            {
-                title: '人员管理',
-                key: '/admin/cms/person',
-                icon: 'user'
-            },
-            // {
-            //     title: '订单管理',
-            //     key: '/admin/order',
-            //     btnList: [
-            //         {
-            //             title: '订单详情',
-            //             key: 'detail'
-            //         },
-            //         {
-            //             title: '结束订单',
-            //             key: 'finish'
-            //         }
-            //     ]
-            // },
-            {
-                title: '团队管理',
-                key: '/admin/cms/user',
-                icon: 'team'
-            },
-            {
-                title: '车辆地图',
-                key: '/admin/cms/carMap',
-                icon: 'car',
-                disabled: 'disabled'
-            },
-        ]
-    },
-    {
-        title: 'echarts',
-        key: '/admin/charts',
-        icon: 'bars',
-        children: [
-            {
-                title: '柱形图',
-                key: '/admin/charts/bar',
-                icon: 'bar-chart'
-            },
-            {
-                title: '饼图',
-                key: '/admin/charts/pie',
-                icon: 'pie-chart'
-            },
-            {
-                title: '折线图',
-                key: '/admin/charts/line',
-                icon: 'line-chart'
-            },
-            {
-                title: 'geo地图',
-                key: '/admin/charts/geo',
-                icon: 'environment-o'
-            },
-        ]
-    },
+   
+    
     {
         title: '权限设置',
         key: '/admin/permission',
