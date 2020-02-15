@@ -4,7 +4,7 @@ export default class Home extends React.Component {
     public render () {
         return (
             <div className="home-wrap">
-                欢迎使用, XXX管理系统
+                欢迎使用, FUI管理系统
             </div>
         )
     }
