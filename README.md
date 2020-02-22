@@ -10,4 +10,5 @@
 [管理端demo](https://baggiomygod.github.io/fui-admin-demo/build/#)
 
 [可视化1](https://baggiomygod.github.io/screen_data_vis/build/#/screen/main)
+
 [可视化2](https://baggiomygod.github.io/screen_data_vis/build/#/screen/rework)
