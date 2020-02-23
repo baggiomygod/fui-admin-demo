@@ -1,4 +1,6 @@
 ## 作品列表
+[blog地址](https://baggiomygod.github.io/)
+
 [vue h5](https://baggiomygod.github.io/vueSellApp/dist/#)
 
 [react h5](https://baggiomygod.github.io/fui-fullstack/fui-apps/webapp-react/dist/#/home)
@@ -11,4 +13,4 @@
 
 [可视化1](https://baggiomygod.github.io/screen_data_vis/build/#/screen/main)
 
-[可视化2](https://baggiomygod.github.io/screen_data_vis/build/#/screen/rework)
+[可视化-复工demo](https://baggiomygod.github.io/screen_data_vis/build/#/screen/rework)
