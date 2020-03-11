@@ -9,8 +9,8 @@
 
 [能力测评h5](https://www.17tacc.com/m)
 
-[管理端demo](https://baggiomygod.github.io/fui-admin-demo/build/#)
+[管理端demo PC端打开](https://baggiomygod.github.io/fui-admin-demo/build/#/admin/home)
 
-[可视化1](https://baggiomygod.github.io/screen_data_vis/build/#/screen/main)
+[可视化1 PC端打开](https://baggiomygod.github.io/screen_data_vis/build/#/screen/main)
 
-[可视化-复工demo](https://baggiomygod.github.io/screen_data_vis/build/#/screen/rework)
+[可视化-复工demo PC端打开](https://baggiomygod.github.io/screen_data_vis/build/#/screen/rework)
